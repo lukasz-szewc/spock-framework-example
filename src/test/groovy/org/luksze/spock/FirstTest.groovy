@@ -7,4 +7,8 @@ class FirstTest extends Specification {
         expect:
         Math.max(1, 2) == 2
     }
+
+    def "second test"() {
+        expect: 1 + 1 == 2
+    }
 }
