@@ -8,6 +8,7 @@ class WhenThenExampleTest extends Specification {
         setup:
         def stack = new Stack()
         def elem = "push me"
+        assert stack.size() == 0
 
         when:
         stack.push(elem)
@@ -33,5 +34,26 @@ class WhenThenExampleTest extends Specification {
         then:
         stack.size() == 2
         stack.peek() == "other element"
+    }
+
+    def "exception condition example"() {
+        setup:
+        def stack = new Stack<String>()
+
+        when:
+        stack.pop()
+
+        then:
+        thrown(EmptyStackException)
+    }
+
+    def "multiple assertions example"() {
+        expect: multipleAssertions("text")
+    }
+
+    void multipleAssertions(String text) {
+        assert text.length() == 4
+        assert text.toUpperCase() == "TEXT"
+        assert text.charAt(0) == (char) 't'
     }
 }
