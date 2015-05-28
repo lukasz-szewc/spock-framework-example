@@ -19,13 +19,13 @@ class FixtureMethodTest extends Specification {
         number.incrementAndGet()
     }
 
-    def "test method"() {
+    def "first feature method"() {
         println "first test method"
         expect: number.incrementAndGet() == 2
         and: staticNumber.incrementAndGet() == 2
     }
 
-    def "other test method"() {
+    def "second feature method"() {
         println "second test method"
         expect: number.incrementAndGet() == 2
         and: staticNumber.incrementAndGet() == 3
