@@ -51,6 +51,17 @@ class WhenThenExampleTest extends Specification {
         expect: multipleAssertions("text")
     }
 
+    def "blocks with description example"() {
+        setup: "creating empty stack"
+        def stack = new Stack<String>()
+
+        when: "element is taken from the empty stack"
+        stack.pop()
+
+        then: "empty stack exception is thrown"
+        thrown(EmptyStackException)
+    }
+
     void multipleAssertions(String text) {
         assert text.length() == 4
         assert text.toUpperCase() == "TEXT"
