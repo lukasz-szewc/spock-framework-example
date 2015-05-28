@@ -62,6 +62,21 @@ class WhenThenExampleTest extends Specification {
         thrown(EmptyStackException)
     }
 
+    def "given when then example"() {
+        given: "empty stack"
+        def stack = new Stack()
+        def elem = "push me"
+
+        when: "element is pushed into stack"
+        stack.push(elem)
+
+        then: "stack size is one"
+        stack.size() == 1
+
+        and: "element at the peek is expected element"
+        stack.peek() == elem
+    }
+
     void multipleAssertions(String text) {
         assert text.length() == 4
         assert text.toUpperCase() == "TEXT"
