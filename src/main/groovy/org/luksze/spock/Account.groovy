@@ -14,4 +14,8 @@ class Account {
     def increase(int increaseValue) {
         total += increaseValue
     }
+
+    def decrease(int decreasedValue) {
+        total = total - decreasedValue
+    }
 }

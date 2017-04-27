@@ -22,4 +22,15 @@ class FirstTest extends Specification {
         then:
         account.total == 100
     }
+
+    def "another example of given when then"() {
+        given:
+        def account = new Account(100)
+
+        when:
+        account.decrease(40)
+
+        then:
+        account.total == 60
+    }
 }
